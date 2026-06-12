@@ -30,8 +30,8 @@ unsigned long lastBtnPress  = 0;          // 上次按键时间戳（防抖用�
  * 编码器旋转中断（仅挂在 A 相上升沿）
  *
  * 原理：当 A 相出现上升沿时，读取 B 相电平
- *   - B == HIGH → 顺时针 (CW)
- *   - B == LOW  → 逆时针 (CCW)
+ *   - B == LOW  → 顺时针 (CW)
+ *   - B == HIGH → 逆时针 (CCW)
  *
  * 这是最常用的"单边沿"解码方式，简单可靠。
  * 如果需要更高精度（4倍频），可以改为双边沿 + 查表法。
@@ -45,7 +45,7 @@ void IRAM_ATTR encoderISR() {
   lastTime = now;
 
   // 读取 B 相电平判断方向
-  if (digitalRead(PIN_ENC_B) == HIGH) {
+  if (digitalRead(PIN_ENC_B) == LOW) {
     encoderPos++;      // 顺时针
     lastDirection = 1;
   } else {
