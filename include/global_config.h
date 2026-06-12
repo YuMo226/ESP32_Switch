@@ -20,6 +20,10 @@
 #define ENC_DEBOUNCE_US   200     // 旋转防抖（微秒）
 #define BTN_DEBOUNCE_MS   50      // 按键防抖（毫秒）
 
+// ---------- 蓝牙 BLE HID 配置 ----------
+#define BLE_DEVICE_NAME   "Smart_Knob_C3"   // 电脑蓝牙搜索到的设备名
+#define BLE_ENABLED       1                  // 1 = 启用 BLE，0 = 禁用
+
 // ---------- ESP-NOW 配置 ----------
 // TODO: 填入接收端的 MAC 地址
 // 格式: {0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF}
